@@ -62,8 +62,19 @@ function agregarAlCarritoClicked(event){
     console.log(imagenSrc);
 
     agregarItemAlCarrito(titulo, precio, imagenSrc);
-
+    
     hacerVisibleCarrito();
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+        }
+    };
+    xhttp.open("POST", "addToCart.php", true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    var data = "titulo=" + encodeURIComponent(titulo) + "&precio=" + encodeURIComponent(precio);
+    xhttp.send(data);
+
 }
 
 //Funcion que hace visible el carrito
