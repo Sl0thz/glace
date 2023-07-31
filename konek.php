@@ -7,9 +7,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Message = $_POST["Message"];
 
     $host = 'localhost';
-    $database = 'ecalg';
-    $username = 'root';
-    $password = '';
+    $database = 'glacemyi_ecalg';
+    $username = 'glacemyi_glace';
+    $password = 'Glace12345678';
 
     try {
         // Create a new PDO instance
@@ -32,15 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Close the database connection
         $pdo = null;
-        /*
-        // Display a thank you message
-        echo "<h2>Thank you for your submission, $Name!</h2>";
-        echo "<p>We have received your message and saved it to the database:</p>";
-        echo "<p><strong>Name:</strong> $Name</p>";
-        echo "<p><strong>Phone Number:</strong> $Phone</p>";
-        echo "<p><strong>Email:</strong> $Email</p>";
-        echo "<p><strong>Message:</strong> $Message</p>";
-        */
+
+        
+
     } catch (PDOException $e) {
         die("Error: " . $e->getMessage());
     }
